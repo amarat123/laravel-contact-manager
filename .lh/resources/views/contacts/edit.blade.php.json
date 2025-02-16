@@ -1,0 +1,46 @@
+{
+    "sourceFile": "resources/views/contacts/edit.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1739725157771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739725170063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n @section('content')\r\n     <div class=\"card p-4\">\r\n         <h2>Edit Contact</h2>\r\n \r\n-        <form action=\"{{ route('contacts.store') }}\" method=\"POST\">\r\n+        <form action=\"{{ route('contacts.update', $contact->id) }}\" method=\"POST\">\r\n             @csrf\r\n \r\n             <div class=\"mb-3\">\r\n                 <label class=\"form-label\">Name:</label>\r\n"
+                },
+                {
+                    "date": 1739725204206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             @csrf\r\n \r\n             <div class=\"mb-3\">\r\n                 <label class=\"form-label\">Name:</label>\r\n-                <input type=\"text\" name=\"name\" class=\"form-control\" required>\r\n+                <input type=\"text\" name=\"name\" class=\"form-control\" value=\"{{ $contact->name }}\" required>\r\n             </div>\r\n \r\n             <div class=\"mb-3\">\r\n                 <label class=\"form-label\">Phone:</label>\r\n"
+                },
+                {
+                    "date": 1739725216531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             </div>\r\n \r\n             <div class=\"mb-3\">\r\n                 <label class=\"form-label\">Phone:</label>\r\n-                <input type=\"text\" name=\"phone\" class=\"form-control\" required>\r\n+                <input type=\"text\" name=\"phone\" class=\"form-control\" value=\"{{ $contact->phone }} required>\r\n             </div>\r\n \r\n             <button type=\"submit\" class=\"btn btn-success\">Save Contact</button>\r\n             <a href=\"{{ route('contacts.index') }}\" class=\"btn btn-secondary\">Cancel</a>\r\n"
+                },
+                {
+                    "date": 1739725240648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <label class=\"form-label\">Phone:</label>\r\n                 <input type=\"text\" name=\"phone\" class=\"form-control\" value=\"{{ $contact->phone }} required>\r\n             </div>\r\n \r\n-            <button type=\"submit\" class=\"btn btn-success\">Save Contact</button>\r\n+            <button type=\"submit\" class=\"btn btn-success\">Update Contact</button>\r\n             <a href=\"{{ route('contacts.index') }}\" class=\"btn btn-secondary\">Cancel</a>\r\n         </form>\r\n     </div>\r\n @endsection\r\n"
+                },
+                {
+                    "date": 1739725249032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,6 @@\n @extends('layouts.app')\r\n \r\n-@section('content')\r\n-    <h1>Edit Contact</h1>\r\n-    <form method=\"POST\" action=\"{{ route('contacts.update', $contact->id) }}\">\r\n-        @csrf @method('PUT')\r\n-        <label>Name:</label>\r\n-        <input type=\"text\" name=\"name\" value=\"{{ $contact->name }}\">\r\n-        <label>Phone:</label>\r\n-        <input type=\"text\" name=\"phone\" value=\"{{ $contact->phone }}\">\r\n-        <button type=\"submit\">Update</button>\r\n-    </form>\r\n-@endsection\r\n-\r\n-@extends('layouts.app')\r\n-\r\n @section('title', 'Edit Contact')\r\n \r\n @section('content')\r\n     <div class=\"card p-4\">\r\n"
+                },
+                {
+                    "date": 1739725270155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,13 @@\n @extends('layouts.app')\r\n \r\n-@section('title', 'Edit Contact')\r\n-\r\n @section('content')\r\n-    <div class=\"card p-4\">\r\n-        <h2>Edit Contact</h2>\r\n-\r\n-        <form action=\"{{ route('contacts.update', $contact->id) }}\" method=\"POST\">\r\n-            @csrf\r\n-\r\n-            <div class=\"mb-3\">\r\n-                <label class=\"form-label\">Name:</label>\r\n-                <input type=\"text\" name=\"name\" class=\"form-control\" value=\"{{ $contact->name }}\" required>\r\n-            </div>\r\n-\r\n-            <div class=\"mb-3\">\r\n-                <label class=\"form-label\">Phone:</label>\r\n-                <input type=\"text\" name=\"phone\" class=\"form-control\" value=\"{{ $contact->phone }} required>\r\n-            </div>\r\n-\r\n-            <button type=\"submit\" class=\"btn btn-success\">Update Contact</button>\r\n-            <a href=\"{{ route('contacts.index') }}\" class=\"btn btn-secondary\">Cancel</a>\r\n-        </form>\r\n-    </div>\r\n+    <h1>Edit Contact</h1>\r\n+    <form method=\"POST\" action=\"{{ route('contacts.update', $contact->id) }}\">\r\n+        @csrf @method('PUT')\r\n+        <label>Name:</label>\r\n+        <input type=\"text\" name=\"name\" value=\"{{ $contact->name }}\">\r\n+        <label>Phone:</label>\r\n+        <input type=\"text\" name=\"phone\" value=\"{{ $contact->phone }}\">\r\n+        <button type=\"submit\">Update</button>\r\n+    </form>\r\n @endsection\r\n-\r\n"
+                },
+                {
+                    "date": 1739725342684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,27 @@\n @extends('layouts.app')\r\n \r\n+@section('title', 'Edit Contact')\r\n+\r\n @section('content')\r\n-    <h1>Edit Contact</h1>\r\n-    <form method=\"POST\" action=\"{{ route('contacts.update', $contact->id) }}\">\r\n-        @csrf @method('PUT')\r\n-        <label>Name:</label>\r\n-        <input type=\"text\" name=\"name\" value=\"{{ $contact->name }}\">\r\n-        <label>Phone:</label>\r\n-        <input type=\"text\" name=\"phone\" value=\"{{ $contact->phone }}\">\r\n-        <button type=\"submit\">Update</button>\r\n-    </form>\r\n+    <div class=\"card p-4\">\r\n+        <h2 class=\"mb-4\">Edit Contact</h2>\r\n+\r\n+        <form method=\"POST\" action=\"{{ route('contacts.update', $contact->id) }}\">\r\n+            @csrf \r\n+            @method('PUT')\r\n+\r\n+            <div class=\"mb-3\">\r\n+                <label class=\"form-label\">Name:</label>\r\n+                <input type=\"text\" name=\"name\" value=\"{{ $contact->name }}\" class=\"form-control\" required>\r\n+            </div>\r\n+\r\n+            <div class=\"mb-3\">\r\n+                <label class=\"form-label\">Phone:</label>\r\n+                <input type=\"text\" name=\"phone\" value=\"{{ $contact->phone }}\" class=\"form-control\" required>\r\n+            </div>\r\n+\r\n+            <button type=\"submit\" class=\"btn btn-success\">Update</button>\r\n+            <a href=\"{{ route('contacts.index') }}\" class=\"btn btn-secondary\">Cancel</a>\r\n+        </form>\r\n+    </div>\r\n @endsection\r\n"
+                }
+            ],
+            "date": 1739725157771,
+            "name": "Commit-0",
+            "content": "@extends('layouts.app')\r\n\r\n@section('content')\r\n    <h1>Edit Contact</h1>\r\n    <form method=\"POST\" action=\"{{ route('contacts.update', $contact->id) }}\">\r\n        @csrf @method('PUT')\r\n        <label>Name:</label>\r\n        <input type=\"text\" name=\"name\" value=\"{{ $contact->name }}\">\r\n        <label>Phone:</label>\r\n        <input type=\"text\" name=\"phone\" value=\"{{ $contact->phone }}\">\r\n        <button type=\"submit\">Update</button>\r\n    </form>\r\n@endsection\r\n\r\n@extends('layouts.app')\r\n\r\n@section('title', 'Edit Contact')\r\n\r\n@section('content')\r\n    <div class=\"card p-4\">\r\n        <h2>Edit Contact</h2>\r\n\r\n        <form action=\"{{ route('contacts.store') }}\" method=\"POST\">\r\n            @csrf\r\n\r\n            <div class=\"mb-3\">\r\n                <label class=\"form-label\">Name:</label>\r\n                <input type=\"text\" name=\"name\" class=\"form-control\" required>\r\n            </div>\r\n\r\n            <div class=\"mb-3\">\r\n                <label class=\"form-label\">Phone:</label>\r\n                <input type=\"text\" name=\"phone\" class=\"form-control\" required>\r\n            </div>\r\n\r\n            <button type=\"submit\" class=\"btn btn-success\">Save Contact</button>\r\n            <a href=\"{{ route('contacts.index') }}\" class=\"btn btn-secondary\">Cancel</a>\r\n        </form>\r\n    </div>\r\n@endsection\r\n\r\n"
+        }
+    ]
+}

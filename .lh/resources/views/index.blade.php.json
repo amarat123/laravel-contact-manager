@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/index.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1739721994053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1739721994053,
+            "name": "Commit-0",
+            "content": "@extends('layouts.app')\r\n\r\n@section('content')\r\n    <h1>Contact List</h1>\r\n    <a href=\"{{ route('contacts.create') }}\">Add Contact</a> |\r\n    <a href=\"{{ route('contacts.import') }}\">Import Contacts</a>\r\n    \r\n    @if (session('success'))\r\n        <p>{{ session('success') }}</p>\r\n    @endif\r\n\r\n    <table>\r\n        <tr><th>Name</th><th>Phone</th><th>Actions</th></tr>\r\n        @foreach ($contacts as $contact)\r\n            <tr>\r\n                <td>{{ $contact->name }}</td>\r\n                <td>{{ $contact->phone }}</td>\r\n                <td>\r\n                    <a href=\"{{ route('contacts.edit', $contact->id) }}\">Edit</a> |\r\n                    <form action=\"{{ route('contacts.destroy', $contact->id) }}\" method=\"POST\" style=\"display:inline;\">\r\n                        @csrf @method('DELETE')\r\n                        <button type=\"submit\">Delete</button>\r\n                    </form>\r\n                </td>\r\n            </tr>\r\n        @endforeach\r\n    </table>\r\n@endsection\r\n"
+        }
+    ]
+}

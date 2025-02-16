@@ -1,0 +1,26 @@
+{
+    "sourceFile": "resources/views/layouts/app.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1739722640311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739723798418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n     <nav>\r\n         <ul>\r\n             <li><a href=\"{{ route('contacts.index') }}\">Home</a></li>\r\n             <li><a href=\"{{ route('contacts.create') }}\">Add Contact</a></li>\r\n+            <li><a href=\"{{ route('contacts.import') }}\">Import Contacts</a></li>\r\n         </ul>\r\n     </nav>\r\n \r\n     <div class=\"container\">\r\n"
+                },
+                {
+                    "date": 1739724961390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,23 +2,18 @@\n <html lang=\"en\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n-    <title>@yield('title', 'Contact Manager')</title>\r\n-    <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">\r\n+    <title>@yield('title')</title>\r\n+    \r\n+    <!-- Bootstrap CSS -->\r\n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\r\n </head>\r\n <body>\r\n-\r\n-    <nav>\r\n-        <ul>\r\n-            <li><a href=\"{{ route('contacts.index') }}\">Home</a></li>\r\n-            <li><a href=\"{{ route('contacts.create') }}\">Add Contact</a></li>\r\n-            <li><a href=\"{{ route('contacts.import') }}\">Import Contacts</a></li>\r\n-        </ul>\r\n-    </nav>\r\n-\r\n-    <div class=\"container\">\r\n+    <div class=\"container mt-4\">\r\n         @yield('content')\r\n     </div>\r\n \r\n+    <!-- Bootstrap JS (Optional, if you need dropdowns, modals, etc.) -->\r\n+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\"></script>\r\n </body>\r\n </html>\r\n"
+                }
+            ],
+            "date": 1739722640311,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>@yield('title', 'Contact Manager')</title>\r\n    <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">\r\n</head>\r\n<body>\r\n\r\n    <nav>\r\n        <ul>\r\n            <li><a href=\"{{ route('contacts.index') }}\">Home</a></li>\r\n            <li><a href=\"{{ route('contacts.create') }}\">Add Contact</a></li>\r\n        </ul>\r\n    </nav>\r\n\r\n    <div class=\"container\">\r\n        @yield('content')\r\n    </div>\r\n\r\n</body>\r\n</html>\r\n"
+        }
+    ]
+}

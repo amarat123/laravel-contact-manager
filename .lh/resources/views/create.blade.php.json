@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/create.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1739722045787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1739722045787,
+            "name": "Commit-0",
+            "content": "@extends('layouts.app')\r\n\r\n@section('content')\r\n    <h1>Add Contact</h1>\r\n    <form method=\"POST\" action=\"{{ route('contacts.store') }}\">\r\n        @csrf\r\n        <label>Name:</label>\r\n        <input type=\"text\" name=\"name\">\r\n        <label>Phone:</label>\r\n        <input type=\"text\" name=\"phone\">\r\n        <button type=\"submit\">Save</button>\r\n    </form>\r\n@endsection\r\n"
+        }
+    ]
+}

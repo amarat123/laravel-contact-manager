@@ -1,0 +1,18 @@
+{
+    "sourceFile": "sample_contacts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1739722166848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1739722166848,
+            "name": "Commit-0",
+            "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<contacts>\r\n    <contact>\r\n        <name>Kökten Adal</name>\r\n        <phone>+90 333 8859342</phone>\r\n    </contact>\r\n    <contact>\r\n        <name>Hamma Abdurrezak</name>\r\n        <phone>+90 333 1563682</phone>\r\n    </contact>\r\n</contacts>"
+        }
+    ]
+}
